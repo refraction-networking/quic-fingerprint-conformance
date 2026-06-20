@@ -1,0 +1,108 @@
+[
+  {
+    "conn_key": "7f3e8c84b52b767c",
+    "qtp": {
+      "ack_delay_exponent": 0,
+      "active_connection_id_limit": 0,
+      "initial_max_data": 15728640,
+      "initial_max_stream_data_bidi_local": 6291456,
+      "initial_max_stream_data_bidi_remote": 6291456,
+      "initial_max_stream_data_uni": 6291456,
+      "initial_max_streams_bidi": 100,
+      "initial_max_streams_uni": 103,
+      "max_ack_delay": 0,
+      "max_idle_timeout": 30000,
+      "max_udp_payload_size": 1472,
+      "parameter_ids": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        15,
+        17,
+        27,
+        32,
+        12584
+      ]
+    },
+    "qtp_fp": "b1466e9ebbb4020c",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 1,
+      "scid_len": 0,
+      "sorted_unique_frames": [
+        0,
+        1,
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "91fc7b001022ca85",
+    "super_fp": "9b960c78d5e9235f",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [
+        2
+      ],
+      "cipher_suites": [
+        4865,
+        4866,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        27,
+        43,
+        45,
+        51,
+        57,
+        17613,
+        65037
+      ],
+      "key_share": [
+        4588,
+        29
+      ],
+      "named_groups": [
+        4588,
+        29,
+        23,
+        24
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        2054,
+        1537,
+        513
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "a45deedc2529fb27"
+  }
+]

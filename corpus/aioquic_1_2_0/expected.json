@@ -1,0 +1,1202 @@
+[
+  {
+    "conn_key": "0d1bd0c3bca178ba",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "353c3d48e4710688",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "36d7492eab1256ed",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "37d0a0ebf7d7c071",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "3f88d63743329e6b",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "4593293cb24590c5",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "61eb8c28338b19a4",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "90ae4ae360728f26",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "97bf6f4a940baac8",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "9ebe6514014fcfcc",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "db2f456bf41e0aa8",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  },
+  {
+    "conn_key": "ee890f0bca177304",
+    "qtp": {
+      "ack_delay_exponent": 3,
+      "active_connection_id_limit": 8,
+      "initial_max_data": 1048576,
+      "initial_max_stream_data_bidi_local": 1048576,
+      "initial_max_stream_data_bidi_remote": 1048576,
+      "initial_max_stream_data_uni": 1048576,
+      "initial_max_streams_bidi": 128,
+      "initial_max_streams_uni": 128,
+      "max_ack_delay": 25,
+      "max_idle_timeout": 60000,
+      "max_udp_payload_size": 0,
+      "parameter_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        17
+      ]
+    },
+    "qtp_fp": "97b7174cd552a4a2",
+    "quic_header": {
+      "dcid_len": 8,
+      "packet_number_length": 2,
+      "scid_len": 8,
+      "sorted_unique_frames": [
+        6
+      ],
+      "token_presence": 0,
+      "version": 1
+    },
+    "quic_header_fp": "a6b09ab7898134ef",
+    "super_fp": "e309eafcb17d3e3c",
+    "tls": {
+      "alpn": [
+        "h3"
+      ],
+      "cert_compression_algs": [],
+      "cipher_suites": [
+        4866,
+        4865,
+        4867
+      ],
+      "compression_methods": [
+        0
+      ],
+      "ec_point_formats": [],
+      "extensions_sorted": [
+        0,
+        10,
+        13,
+        16,
+        43,
+        45,
+        51,
+        57
+      ],
+      "key_share": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "named_groups": [
+        23,
+        24,
+        29,
+        30
+      ],
+      "psk_key_exchange_modes": [
+        1
+      ],
+      "record_size_limit": null,
+      "signature_algorithms": [
+        1027,
+        2052,
+        1025,
+        1283,
+        2053,
+        1281,
+        513,
+        2055,
+        2056
+      ],
+      "supported_versions": [
+        772
+      ],
+      "version": 771
+    },
+    "tls_fp": "feb991949c9128fb"
+  }
+]

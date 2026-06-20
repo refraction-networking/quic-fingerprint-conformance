@@ -1,0 +1,18 @@
+# NOTE: corpus/**/input.pcap* and corpus/**/expected.json ARE committed — they
+# are the versioned contract. Do not ignore them.
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Go runner build artifacts + host-specific workspace file
+go_runner/go_runner
+go_runner/go.work
+go_runner/go.work.sum
+
+# OS / editor
+.DS_Store

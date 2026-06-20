@@ -1,0 +1,67 @@
+# Fast conformance checks: pyquicfp and clienthellod against the corpus goldens.
+# These need no DPDK, so they run on every push/PR. The Rust/DPDK retina check is
+# heavier and lives in retina.yml.
+#
+# Requires a secret `REFRACTION_CI_TOKEN`: a PAT (or fine-grained token) with
+# read access to the private refraction-networking repos (pyquicfp, clienthellod).
+# The default GITHUB_TOKEN only reaches this repo, not the other private ones.
+# (More robust org alternative: mint a short-lived token with
+# actions/create-github-app-token from a GitHub App installed on those repos.)
+name: conformance
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Weekly — catches drift if an upstream implementation's default branch moves.
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: pyquicfp vs corpus
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Authenticate git for the private pyquicfp dependency
+        run: |
+          git config --global \
+            url."https://x-access-token:${{ secrets.REFRACTION_CI_TOKEN }}@github.com/".insteadOf \
+            "https://github.com/"
+      - name: Install pyquicfp (private, from refraction-networking)
+        run: pip install -r requirements.txt
+      - name: check --impl python
+        run: python -m harness.check --impl python -v
+
+  go:
+    name: clienthellod vs corpus
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: quic-fingerprint-conformance
+      - uses: actions/checkout@v4
+        with:
+          repository: refraction-networking/clienthellod
+          path: clienthellod
+          token: ${{ secrets.REFRACTION_CI_TOKEN }}
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: check --impl go
+        working-directory: quic-fingerprint-conformance
+        env:
+          # GoRunner builds go_runner against this checkout via a generated go.work.
+          QUICFP_CLIENTHELLOD: ${{ github.workspace }}/clienthellod
+        run: python -m harness.check --impl go -v

@@ -1,0 +1,65 @@
+# Rust/DPDK retina-quic-fp conformance. Heavy (builds retina + DPDK in a
+# container), so it runs weekly, on demand, and when something that affects it
+# changes — not on every push. Validated on Linux; see docker/README.md.
+#
+# Requires a secret `REFRACTION_CI_TOKEN` with read access to the private
+# refraction-networking/retina-quic-fp repo. The container's cargo build fetches
+# sippejw/retina + sippejw/tls-parser, which are public, so it needs no token.
+name: conformance-retina
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug_tmate:
+        description: "Open a tmate SSH session into the runner if the job fails"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 6 * * 1"
+  push:
+    paths:
+      - "corpus/**"
+      - "docker/**"
+      - "harness/**"
+      - ".github/workflows/retina.yml"
+  pull_request:
+    paths:
+      - "corpus/**"
+      - "docker/**"
+      - "harness/**"
+
+permissions:
+  contents: read
+
+jobs:
+  retina:
+    name: retina-quic-fp vs corpus (DPDK)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: quic-fingerprint-conformance
+      - uses: actions/checkout@v4
+        with:
+          repository: refraction-networking/retina-quic-fp
+          path: retina-quic-fp
+          token: ${{ secrets.REFRACTION_CI_TOKEN }}
+      - name: Build DPDK image
+        run: docker build -t quicfp-conformance-dpdk quic-fingerprint-conformance/docker
+      - name: Build retina + run conformance
+        # --privileged lets run-conformance.sh allocate 2 MB hugepages and mount a
+        # hugetlbfs in the runner (DPDK EAL needs a mounted hugetlbfs per reserved
+        # page size). It builds retina against apt DPDK 23.11 and runs
+        # `harness.check --impl retina`.
+        run: |
+          docker run --rm --privileged \
+            -v "$PWD":/work \
+            -e RETINA_DIR=/work/retina-quic-fp \
+            -e CONFORMANCE_DIR=/work/quic-fingerprint-conformance \
+            quicfp-conformance-dpdk run-conformance.sh
+      - name: Debug via tmate (on failure, when manually requested)
+        if: ${{ failure() && github.event_name == 'workflow_dispatch' && inputs.debug_tmate }}
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true
