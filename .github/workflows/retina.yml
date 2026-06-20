@@ -47,6 +47,16 @@ jobs:
           token: ${{ secrets.REFRACTION_CI_TOKEN }}
       - name: Build DPDK image
         run: docker build -t quicfp-conformance-dpdk quic-fingerprint-conformance/docker
+      # Cache the cargo registry + compiled retina tree so re-runs skip the
+      # ~15-min DPDK/Rust build (the container writes them to host-mounted dirs).
+      - name: Cache retina build
+        uses: actions/cache@v4
+        with:
+          path: |
+            ci-cache/cargo
+            ci-cache/target
+          key: retina-build-${{ hashFiles('retina-quic-fp/Cargo.lock') }}
+          restore-keys: retina-build-
       - name: Build retina + run conformance
         # --privileged: run-conformance.sh allocates 2 MB hugepages + mounts a
         # hugetlbfs (DPDK EAL needs a mount per reserved page size), builds retina
@@ -58,13 +68,21 @@ jobs:
         # failed". Offline retina uses no NIC, so an empty PCI device list is
         # correct. STOPGAP: the proper fix is `--no-pci` in retina's offline EAL
         # args (get_eal_params), tracked as a future fix for the retina fork.
+        #
+        # CARGO_HOME/CARGO_TARGET_DIR point at the cached host dirs.
         run: |
+          mkdir -p ci-cache/cargo ci-cache/target
           docker run --rm --privileged \
             --tmpfs /sys/bus/pci/devices \
             -v "$PWD":/work \
+            -v "$PWD/ci-cache/cargo":/cargo -e CARGO_HOME=/cargo \
+            -v "$PWD/ci-cache/target":/target -e CARGO_TARGET_DIR=/target \
             -e RETINA_DIR=/work/retina-quic-fp \
             -e CONFORMANCE_DIR=/work/quic-fingerprint-conformance \
             quicfp-conformance-dpdk run-conformance.sh
+      - name: Restore cache dir ownership (container writes as root)
+        if: always()
+        run: sudo chown -R "$(id -u):$(id -g)" ci-cache 2>/dev/null || true
       - name: Debug via tmate (on failure, when manually requested)
         if: ${{ failure() && github.event_name == 'workflow_dispatch' && inputs.debug_tmate }}
         uses: mxschmitt/action-tmate@v3

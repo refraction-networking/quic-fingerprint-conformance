@@ -16,3 +16,6 @@ go_runner/go.work.sum
 
 # OS / editor
 .DS_Store
+
+# CI build cache (Actions)
+ci-cache/

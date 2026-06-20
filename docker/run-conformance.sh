@@ -40,6 +40,15 @@ TARGET_DIR="${CARGO_TARGET_DIR:-$RETINA_DIR/target}"
 BIN="$TARGET_DIR/release/quic_fingerprint"
 [ -x "$BIN" ] || { echo "build did not produce $BIN" >&2; exit 1; }
 
+# Diagnostic: run retina on one pcap with DPDK logging ON (suppress_dpdk_output=
+# false) so a failure shows the real EAL reason — IOVA mode, hugepage status,
+# mempool error. The harness truncates retina's stderr, so this prints it raw.
+echo "==> DPDK diagnostic (one pcap, verbose EAL)"
+{ echo "suppress_dpdk_output = false"; cat "$RETINA_DIR/configs/offline.toml"; } > /tmp/offline-verbose.toml
+diag_pcap="$(ls "$CONFORMANCE_DIR"/corpus/*/input.pcap* 2>/dev/null | head -1)"
+"$BIN" --config /tmp/offline-verbose.toml --pcap "$diag_pcap" --stdout 2>&1 | head -50 || true
+echo "==> end diagnostic"
+
 echo "==> conformance: retina vs corpus goldens"
 cd "$CONFORMANCE_DIR"
 exec env \
