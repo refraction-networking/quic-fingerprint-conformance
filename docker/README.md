@@ -6,11 +6,11 @@ python3) so the conformance harness can exercise `--impl retina` without a
 dedicated DPDK tap host. It builds retina at run time, so you always test the
 current code.
 
-> Status: **validated on Linux** (quicfp, aarch64) — the image builds retina
-> against apt DPDK 23.11 and runs `--impl retina` → 6 ok / 2 known-issue / 0
-> failed. It does **not** run under Docker Desktop on macOS: that VM uses DPDK
-> IOVA mode `PA` and can't supply real physical addresses, so the mempool fails.
-> Build/run on a real Linux host or in CI.
+> Status: **validated on Linux** (quicfp, aarch64) and **green in GitHub Actions**
+> — the image builds retina against apt DPDK 23.11 and runs `--impl retina` →
+> 6 ok / 2 known-issue / 0 failed. Build/run on a real Linux host or in CI; macOS
+> Docker Desktop isn't part of the tested path (see the IOVA note under "What we
+> learned").
 
 ## Build
 
@@ -78,11 +78,21 @@ DPDK+retina tree every time.
 - **apt DPDK needs `PKG_CONFIG_ALLOW_SYSTEM_LIBS=1`** (baked into the image):
   apt installs libdpdk in a standard dir, so `pkg-config --libs libdpdk` omits
   the `-L` that retina-core's `build.rs` unwraps (`library_location.unwrap()`).
-- **Mount a hugetlbfs for every *reserved* hugepage size.** "Mempool mempool_0
-  creation failed" means a reserved size has no matching mount — quicfp reserves
-  1 GB pages, so DPDK needs `/mnt/huge_1G` mounted too, not just 2 MB.
-- **macOS Docker Desktop can't run it** (IOVA mode `PA`, no real pagemap) — the
-  mempool fails there regardless of hugepages. Use real Linux / CI.
+- **"Mempool mempool_0 creation failed" has two distinct causes** — both bit us:
+  (1) a *reserved* hugepage size with no matching hugetlbfs mount (quicfp reserves
+  1 GB pages, so DPDK needs `/mnt/huge_1G` mounted too, not just 2 MB); and (2) the
+  requested pool exceeds the available hugepage memory — a CI runner has only ~2 GB
+  (1024 × 2 MB pages), but offline.toml's default mempool (capacity 262_144 at MTU
+  9702 ≈ jumbo mbufs) needs ~2.6 GB. `run-conformance.sh` shrinks the pool for the
+  corpus; capacity does not affect the fingerprint. The error string is identical,
+  so check the failure *stage*: a missing mount aborts during EAL init, whereas an
+  oversized pool fails at `rte_mempool_create` *after* EAL is fully up.
+- **IOVA mode.** Offline retina forces `--iova-mode=va` + `--no-pci` in its EAL
+  args (the `get_eal_params` offline branch), so it no longer depends on IOVA `PA`
+  / real physical addresses — this is what unblocked the cloud CI runner (and the
+  reason the `--tmpfs` PCI-hiding stopgap is gone). macOS Docker Desktop
+  historically failed on IOVA `PA`; that specific blocker is removed, but the Mac
+  path isn't tested — use real Linux / CI.
 
 ## Notes
 

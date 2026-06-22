@@ -66,7 +66,7 @@ Discovering the other impls:
 - **clienthellod**: set `QUICFP_CLIENTHELLOD=/path/to/clienthellod`, or place a
   checkout beside this repo / in `$HOME`. The Go runner wires it via a generated
   `go.work` (the committed go.mod is left alone).
-- **retina-quic-fp**: needs DPDK. Build the binary on a DPDK host (or the planned
+- **retina-quic-fp**: needs DPDK. Build the binary on a DPDK host (or the
   `docker/` image) and set `QUICFP_RETINA_BIN` / `QUICFP_RETINA_CONFIG`. Absent,
   the retina runner reports unavailable and is skipped.
 
