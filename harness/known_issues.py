@@ -19,21 +19,6 @@ from __future__ import annotations
 # corpus check.
 KNOWN_DISCREPANCIES = [
     {
-        "pcaps": {"cloudflare_quiche_0_24_4", "cloudflare_quiche_0_24_4.pcapng"},
-        "impls": {"python", "go"},
-        "summary": "clienthellod ingests GREASE-version Initials",
-        "reason": (
-            "quiche sends a GREASE-version probe Initial (version 0xbabababa) "
-            "reusing the real connection's DCID. clienthellod's "
-            "DecodeQUICHeaderAndFrames does not validate the QUIC version and "
-            "decrypts it with v1 keys; its CRYPTO then collides with the real "
-            "v1 Initial under the same DCID, so reconstruction fails and "
-            "clienthellod produces no fingerprint. pyquicfp rejects unknown "
-            "versions (RFC-correct) and fingerprints the real Initial. "
-            "Fix: add a version check to clienthellod before deriving v1 keys."
-        ),
-    },
-    {
         "pcaps": {"multi_firefox_149", "multi_firefox_149.pcapng"},
         "impls": {"python", "go", "retina"},
         "summary": "retina fingerprints the pre-Retry Initial of a QUIC Retry flow",
