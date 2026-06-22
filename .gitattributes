@@ -1,6 +1,0 @@
-# The growing sample archive lives in Git LFS so the repo (and the submodule
-# consumers) stay lean. The curated corpus/ pcaps are PLAIN git on purpose —
-# they are small (minimized to the Initials) and must always be present for the
-# self-test. Only samples/ pcaps are LFS-backed.
-samples/**/*.pcap   filter=lfs diff=lfs merge=lfs -text
-samples/**/*.pcapng filter=lfs diff=lfs merge=lfs -text

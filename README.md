@@ -44,13 +44,6 @@ goldens (`harness.gen_golden --refresh`), review the diff, and bump the contract
 connections by 5-tuple, py/go by DCID) so those stay green while anything new
 stands out.
 
-## `samples/` — the growing archive (Git LFS)
-
-`samples/` accumulates captures over time, **Git LFS**-backed and deduplicated by
-fingerprint, so the repo and its submodule consumers stay lean. See
-[`samples/README.md`](samples/README.md). New distinct fingerprints get minimized
-and promoted into `corpus/`.
-
 ## Usage
 
 ```bash
@@ -72,13 +65,12 @@ Discovering the other impls:
 
 ## Consuming the corpus from a fingerprinter repo
 
-Pin this repo as a submodule and self-test in CI, skipping the LFS archive:
+Pin this repo as a submodule and self-test in CI:
 
 ```bash
-GIT_LFS_SKIP_SMUDGE=1 git submodule update --init   # pulls corpus, not sample blobs
+git submodule update --init testdata/conformance   # pulls the corpus contract
 python -m harness.check --impl <impl>
 ```
 
 The submodule commit you pin *is* the contract version your repo conforms to;
-bumping it is an explicit, reviewed change. (Alternatively, consume a
-corpus-only release artifact — see the design notes.)
+bumping it is an explicit, reviewed change.
