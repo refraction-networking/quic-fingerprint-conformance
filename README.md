@@ -74,3 +74,27 @@ python -m harness.check --impl <impl>
 
 The submodule commit you pin *is* the contract version your repo conforms to;
 bumping it is an explicit, reviewed change.
+
+## Versioning
+
+The contract is released as git tags **`vMAJOR.MINOR`** (pre-1.0 while it
+stabilizes). Each tag is a deliberate, reviewed snapshot of the corpus, goldens,
+and comparison semantics that consumers test against; the GitHub Release for each
+tag records what changed and whether consumers must re-verify.
+
+- **MAJOR** — the fingerprint algorithm or goldens changed; every consumer must
+  update and re-run its self-test (breaking).
+- **MINOR** — corpus cases added, or a known-issue added/removed (additive
+  coverage; a consumer may newly diverge — which is the point).
+- Harness-internal, docker, or docs-only changes that can't affect pass/fail
+  don't get a tag.
+
+A consumer pins the tag's commit as its submodule (the recorded SHA is the exact
+contract version). To adopt a new contract, check out the tag and commit the bump:
+
+```bash
+git -C testdata/conformance fetch --tags
+git -C testdata/conformance checkout v0.1.0
+git add testdata/conformance
+git commit -m "Bump conformance contract to v0.1.0"
+```
